@@ -1,14 +1,18 @@
-// swap two numbers with using third variable
+// swap two numbers using call by reference
 #include<stdio.h>
-void main()
+int swap(int *x,int *y)
 {
-
- int a,b,c;
-
-printf("enter two numbers");
-scanf("%d%d",&a,&b);
-c=b;
-b=a;
-a=c;
-printf("%d%d",a,b);
+ int tmp;
+ tmp=*x;
+ *x=*y;
+ *y=tmp;
+}
+int main()
+{
+ int a,b,r;
+   printf("enter two numbers");
+   scanf("%d%d",&a,&b);
+   swap(&a,&b);
+ printf ("After swapping :%d %d" , a,b);
+ return 0;
 }
